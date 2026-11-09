@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#07110D">
+    <meta name="referrer" content="no-referrer">
+    <title>Digital Employee ID | IDoraX</title>
+    <link rel="stylesheet" href="/css/card-motion.css">
+    <link rel="stylesheet" href="/css/digital-id.css">
+    <script src="/js/digital-id.js" defer></script>
+</head>
+<body>
+    <main class="digital-id-page" id="digitalIdPage" aria-busy="true">
+        <p class="page-brand">IDoraX <span>IDENTITY WORKSPACE</span></p>
+        <section class="loading-state" id="loadingState" role="status">
+            <span class="loading-indicator" aria-hidden="true"></span>
+            <p>Verifying digital identity</p>
+        </section>
+        <section class="unavailable-state" id="unavailableState" hidden>
+            <p class="eyebrow">DIGITAL ID</p>
+            <h1 id="errorTitle">Employee ID not found or unavailable</h1>
+            <p id="errorMessage">This digital identity is unavailable.</p>
+        </section>
+        <p class="scan-success" id="scanSuccess" role="status" hidden>
+            <span class="scan-success-mark" aria-hidden="true">✓</span>
+            QR ID VERIFIED
+        </p>
+        <div class="tag-suspension" id="tagSuspension" hidden>
+            <span class="tag-lanyard" aria-hidden="true"></span>
+            <article class="digital-id-card" id="digitalIdCard" hidden>
+                <header class="card-header">
+                    <div class="brand-lockup">
+                        <img class="company-logo" id="companyLogo" alt="" hidden>
+                        <div class="company-lockup-details">
+                            <div class="company-name" id="companyName"></div>
+                            <p class="company-tagline" id="companyTagline" hidden></p>
+                        </div>
+                    </div>
+                    <p class="identity-label">DIGITAL IDENTITY</p>
+                </header>
+                <div class="card-content">
+                    <div class="portrait-frame">
+                        <img class="employee-photo" id="employeePhoto" alt="" hidden>
+                        <span class="portrait-fallback" id="portraitFallback" aria-hidden="true">ID</span>
+                    </div>
+                    <div class="identity-details">
+                        <p class="eyebrow">EMPLOYEE RECORD</p>
+                        <h1 id="employeeName"></h1>
+                        <p class="designation" id="employeeDesignation"></p>
+                        <dl class="employee-facts">
+                            <div>
+                                <dt>Employee ID</dt>
+                                <dd id="employeeId"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <span>VERIFIED DIGITAL EMPLOYEE ID</span>
+                    <span class="footer-mark" aria-hidden="true">IX</span>
+                </footer>
+            </article>
+        </div>
+        <section class="employee-profile-details" id="employeeProfileDetails" hidden>
+            <section class="profile-information-card" aria-labelledby="employeeInformationHeading">
+                <p class="eyebrow">EMPLOYEE PROFILE</p>
+                <h2 id="employeeInformationHeading">Employee information</h2>
+                <dl class="profile-facts" id="employeeProfileFacts"></dl>
+            </section>
+            <section class="profile-information-card company-information-card" id="companyInformationCard" aria-labelledby="companyInformationHeading" hidden>
+                <p class="eyebrow">COMPANY</p>
+                <h2 id="companyInformationHeading">Company information</h2>
+                <dl class="profile-facts" id="companyProfileFacts"></dl>
+            </section>
+        </section>
+        <section class="download-panel" id="downloadPanel" hidden>
+            <button class="download-id-button" id="downloadIdButton" type="button">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M5 17v3h14v-3" />
+                </svg>
+                <span>DOWNLOAD ID SOFTCOPY (PDF)</span>
+                <span class="download-spinner" aria-hidden="true"></span>
+            </button>
+            <p class="download-message" id="downloadMessage" role="status" aria-live="polite" hidden></p>
+        </section>
+        <p class="page-footer">Presented securely by <strong>IDoraX</strong></p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+# Dependencies
+node_modules/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+database/.env
+database/.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Database backups and exports
+*.sql
+*.sqlite
+*.db
+*.bak
+
+# Private employee files and uploads
+uploads/
+private/
+employee-data/
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+uploads/

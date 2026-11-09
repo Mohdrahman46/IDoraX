@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IDoraX | Identity Workspace</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card-motion.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="css/bulk-generator.css">
+    <link rel="stylesheet" href="css/design-system.css">
+
+</head>
+
+<body>
+    
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon" aria-hidden="true">I</div>
+
+                <div>
+                    <h2>IDoraX</h2>
+                    <p>Identity workspace</p>
+                </div>
+            </div>
+
+            <!-- SIDEBAR MENU -->
+            <nav class="sidebar-nav">
+
+                <p class="menu-title">MAIN MENU</p>
+
+                <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="5" rx="1.5"/><rect x="13.5" y="11.5" width="7" height="9" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/></svg></span>
+                <span class="nav-label">Dashboard</span>
+                </a>
+
+                <a href="#create-id" class="nav-link" data-page="create-id">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.7 16c.7-1.6 1.8-2.4 3.3-2.4s2.7.8 3.4 2.4M14.5 10h3.2M14.5 13h3.2"/></svg></span>
+                <span class="nav-label">Create Employee ID</span>
+                </a>
+
+                <a href="#bulk-generator" class="nav-link" data-page="bulk-generator">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4.5h8l3 3v12H8z"/><path d="M16 4.5v3h3M11 12h5M11 15h5"/><path d="M5 7.5v12h3"/></svg></span>
+                <span class="nav-label">Bulk ID Generator</span>
+                </a>
+
+                <a href="#employees" class="nav-link" data-page="employees">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.8 19c.4-3 2.1-4.5 5.2-4.5s4.8 1.5 5.2 4.5M16 8h4M16 12h4M16 16h4"/></svg></span>
+                <span class="nav-label">Employee List</span>
+                </a>
+
+                <a href="#settings" class="nav-link" data-page="settings">
+                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/><path d="m19.4 13.5 1.1.8-1.2 2.1-1.3-.5a7.5 7.5 0 0 1-1.6.9l-.2 1.4h-2.4l-.3-1.4a7.5 7.5 0 0 1-1.7-.7l-1.2.7-1.3-2 1-1a7 7 0 0 1-.2-1.8l-1.1-.8 1.2-2.1 1.3.5a7.5 7.5 0 0 1 1.6-.9l.2-1.4h2.4l.3 1.4a7.5 7.5 0 0 1 1.7.7l1.2-.7 1.3 2-1 1a7 7 0 0 1 .2 1.8Z"/></svg></span>
+                    <span class="nav-label">Settings</span>
+                </a>
+
+            </nav>
+
+            <!-- ADMIN PROFILE -->
+            <div class="sidebar-footer">
+
+                <div class="profile-avatar">A</div>
+
+                <div>
+                    <strong>Administrator</strong>
+                    <p>Company Admin</p>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <button
+            class="sidebar-backdrop"
+            id="sidebarBackdrop"
+            type="button"
+            aria-label="Close navigation menu"
+            hidden
+        ></button>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="menu-toggle"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-controls="sidebar"
+                        aria-expanded="false">
+                        <span aria-hidden="true">☰</span>
+                    </button>
+
+                    <div>
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p class="breadcrumb"><span>Workspace</span><span aria-hidden="true">/</span><span id="breadcrumbPage">Dashboard</span></p>
+                    </div>
+
+                </div>
+
+
+            </header>
+
+            <!-- DASHBOARD PAGE -->
+            <section class="page-section active" id="dashboard">
+
+                <div class="welcome-section">
+
+                    <div>
+                        <p class="dashboard-eyebrow">OVERVIEW</p>
+                        <h2>Welcome back, Administrator</h2>
+                        <p>
+                            Manage your employee identities and company card operations from one place.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-header-actions">
+                        <button class="secondary-button" type="button" data-page="bulk-generator">
+                            Bulk generation
+                        </button>
+                        <button class="primary-button" type="button" data-page="create-id">
+                            <span aria-hidden="true">+</span> Create Employee ID
+                        </button>
+                    </div>
+
+                </div>
+                <p class="dashboard-error" id="dashboardMessage" role="status" aria-live="polite"></p>
+
+                <!-- STATISTICS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.8 19c.4-3 2.1-4.5 5.2-4.5s4.8 1.5 5.2 4.5M16 8h4M16 12h4"/></svg></div>
+
+                        <div>
+                            <p>Total Employees</p>
+                            <h2 id="totalEmployees" aria-live="polite">Loading</h2>
+                            <span>Employee records in your workspace</span>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.7 16c.7-1.6 1.8-2.4 3.3-2.4s2.7.8 3.4 2.4M14.5 10h3.2M14.5 13h3.2"/></svg></div>
+
+                        <div>
+                            <p>ID Cards Generated</p>
+                            <h2 id="totalCards" aria-live="polite">Loading</h2>
+                            <span>Cards generated through completed jobs</span>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V7.5L12 4l8 3.5V20M8 20v-5h8v5M8 9h.01M12 9h.01M16 9h.01"/></svg>
+                            <img id="dashboardCompanyLogo" alt="" hidden>
+                        </div>
+
+                        <div>
+                            <p>Company information</p>
+                            <h2 id="dashboardCompanyName">Loading</h2>
+                            <span>Saved company branding</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <section class="dashboard-recent-section" aria-labelledby="recentEmployeesHeading">
+                    <div class="section-heading recent-heading">
+                        <div>
+                            <h2 id="recentEmployeesHeading">Recently added employees</h2>
+                            <p>Latest employee records from your workspace.</p>
+                        </div>
+                        <button class="text-action" type="button" data-page="employees">
+                            View employee list <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Employee</th>
+                                    <th scope="col">Employee ID</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Designation</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentEmployees">
+                                <tr><td class="empty-state" colspan="4">Loading recent employee records…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- CREATE EMPLOYEE ID PAGE -->
+            <section class="page-section" id="create-id">
+
+                <div class="employee-container">
+                    <h2>Create Employee ID Card</h2>
+
+                    <div class="employee-layout">
+
+                        <div class="employee-form">
+                            <div class="page-section-heading employee-form-heading">
+                                <p class="dashboard-eyebrow">EMPLOYEE RECORD</p>
+                                <h2>Employee details</h2>
+                                <p>Enter the employee information used on the company ID.</p>
+                            </div>
+
+                            <form id="employeeForm" novalidate>
+                                <input type="hidden" id="employeeDatabaseId">
+                                <section class="employee-form-section" aria-labelledby="employeeIdentityHeading">
+                                    <h3 id="employeeIdentityHeading">Identity details</h3>
+                                    <div class="employee-photo-field">
+                                        <label for="employeePhoto">Employee photo</label>
+                                        <input
+                                            type="file"
+                                            id="employeePhoto"
+                                            accept="image/png,image/jpeg,image/webp"
+                                        >
+                                        <small>PNG, JPG, or WebP · maximum 2 MB</small>
+                                    </div>
+                                    <div class="employee-fields-grid">
+                                        <div class="employee-field employee-field-wide">
+                                            <label for="employeeCompanyBranding">Company branding</label>
+                                            <select id="employeeCompanyBranding">
+                                                <option value="">Use default company branding</option>
+                                            </select>
+                                            <small>Choose the company identity printed on this employee's card.</small>
+                                        </div>
+                                        <div class="employee-field employee-field-wide">
+                                            <label for="employeeName">Full name <span aria-hidden="true">*</span></label>
+                                            <input type="text" id="employeeName" autocomplete="name" placeholder="e.g. Alex Morgan" required>
+                                        </div>
+                                        <div class="employee-field">
+                                            <label for="employeeId">Employee ID <span aria-hidden="true">*</span></label>
+                                            <input type="text" id="employeeId" placeholder="e.g. EMP-1042" required>
+                                        </div>
+                                        <div class="employee-field">
+                                            <label for="employeeDesignation">Designation <span aria-hidden="true">*</span></label>
+                                            <input type="text" id="employeeDesignation" placeholder="e.g. Operations Manager" required>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="employee-form-section" aria-labelledby="employeeContactHeading">
+                                    <h3 id="employeeContactHeading">Contact information</h3>
+                                    <div class="employee-fields-grid">
+                                        <div class="employee-field">
+                                            <label for="employeeEmail">Email address</label>
+                                            <input type="email" id="employeeEmail" autocomplete="email" placeholder="name@company.com">
+                                        </div>
+                                        <div class="employee-field">
+                                            <label for="employeePhone">Phone number</label>
+                                            <input type="tel" id="employeePhone" autocomplete="tel" placeholder="+1 555 0100">
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="employee-form-section" aria-labelledby="employeeWorkHeading">
+                                    <h3 id="employeeWorkHeading">Employment details</h3>
+                                    <div class="employee-fields-grid">
+                                        <div class="employee-field">
+                                            <label for="employeeDepartment">Department</label>
+                                            <input type="text" id="employeeDepartment" placeholder="e.g. Operations">
+                                        </div>
+                                        <div class="employee-field">
+                                            <label for="employeeJoiningDate">Joining date</label>
+                                            <input type="date" id="employeeJoiningDate">
+                                        </div>
+                                        <div class="employee-field">
+                                            <label for="employeeStatus">Status</label>
+                                            <select id="employeeStatus">
+                                                <option value="Active">Active</option>
+                                                <option value="Inactive">Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <div class="green-terms-editor employee-form-section" id="greenTermsEditor">
+                                    <label for="greenTermsInput">Terms &amp; Conditions</label>
+                                    <p class="field-help">These terms appear on the back of the card.</p>
+                                    <textarea id="greenTermsInput" rows="4">This card is the property of the company.
+Carry this card while on duty.
+Report a lost card to the company immediately.
+Return this card when leaving the company.</textarea>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    class="employee-save-button"
+                                    id="saveEmployeeButton"
+                                >
+                                    Save Employee
+                                </button>
+                                <button
+                                    type="button"
+                                    class="employee-preview-trigger"
+                                    id="previewEmployeeCard"
+                                    disabled
+                                >
+                                    Preview ID Card
+                                </button>
+                                <p
+                                    class="preview-validation-message"
+                                    id="previewValidationMessage"
+                                    role="alert"
+                                ></p>
+                                <p id="employeeMessage" role="status"></p>
+                            </form>
+                        </div>
+
+                        <section class="employee-preview" aria-labelledby="employeeCardPreviewHeading" hidden>
+                            <header class="employee-preview-heading">
+                                <div>
+                                    <h2 id="employeeCardPreviewHeading">Green Corporate ID card preview</h2>
+                                    <p>Live preview of the saved employee information and card details.</p>
+                                </div>
+                            </header>
+                            <p id="employeePreviewMessage" role="status" aria-live="polite">
+                                Enter employee details to update the card preview.
+                            </p>
+                            <p
+                                class="green-qr-message"
+                                id="greenQrMessage"
+                                role="status"
+                                aria-live="polite"
+                                hidden
+                            ></p>
+                            <div class="green-corporate-preview" id="greenCorporatePreview">
+                                <section class="green-preview-side" aria-label="Front of employee ID card">
+                                    <h3>Front side</h3>
+                                    <div class="green-card-scale-frame">
+                                    <article class="green-id-card green-id-card-front">
+                                        <header class="green-card-header">
+                                            <svg class="green-card-wave-art" viewBox="0 0 320 240" preserveAspectRatio="none" aria-hidden="true">
+                                                <path class="green-wave-dark" d="M0 0h320v165c-63 35-115 40-175 18C87 164 46 171 0 204z"></path>
+                                                <path class="green-wave-medium" d="M0 0h320v125c-68 42-119 53-181 34C79 138 43 159 0 182z"></path>
+                                                <path class="green-wave-light" d="M0 0h320v78c-76 41-127 51-192 33C76 95 39 113 0 139z"></path>
+                                            </svg>
+                                            <div class="green-company-brand">
+                                                <img id="greenCompanyLogo" alt="" hidden>
+                                                <h2 id="greenCompanyName">Company</h2>
+                                            </div>
+                                        </header>
+                                        <img class="green-employee-photo" id="greenEmployeePhoto" alt="Employee photo" hidden>
+                                        <div class="green-front-content">
+                                            <h2 id="greenNamePreview">Employee Name</h2>
+                                            <div class="green-employee-details">
+                                                <p><strong>Employee ID</strong><span id="greenIdPreview">Employee ID</span></p>
+                                                <p><strong>Department</strong><span id="greenDepartmentPreview">Department</span></p>
+                                                <p><strong>Phone</strong><span id="greenPhonePreview">Phone</span></p>
+                                            </div>
+                                        </div>
+                                        <svg class="green-card-wave-art green-card-wave-bottom" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+                                            <path class="green-wave-dark" d="M0 48c72-37 120 18 178 17 58-1 88-38 142-48v103H0z"></path>
+                                            <path class="green-wave-medium" d="M0 76c60-34 119 6 172 8 64 3 98-23 148-36v72H0z"></path>
+                                        </svg>
+                                    </article>
+                                    </div>
+                                </section>
+                                <section class="green-preview-side" aria-label="Back of employee ID card">
+                                    <h3>Back side</h3>
+                                    <div class="green-card-scale-frame">
+                                    <article class="green-id-card green-id-card-back">
+                                        <header class="green-card-header green-back-header">
+                                            <svg class="green-card-wave-art" viewBox="0 0 320 190" preserveAspectRatio="none" aria-hidden="true">
+                                                <path class="green-wave-dark" d="M0 0h320v110c-64 34-115 42-175 20C85 111 42 129 0 151z"></path>
+                                                <path class="green-wave-medium" d="M0 0h320v78c-68 39-122 48-185 28C82 87 40 104 0 126z"></path>
+                                            </svg>
+                                        </header>
+                                        <div class="green-back-content">
+                                            <h2>Terms &amp; Conditions</h2>
+                                            <ul id="greenTermsList"></ul>
+                                            <img class="green-qr-code" id="greenQrCode" alt="QR code for this employee's digital ID" hidden>
+                                        </div>
+                                        <svg class="green-card-wave-art green-card-wave-bottom" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+                                            <path class="green-wave-dark" d="M0 48c72-37 120 18 178 17 58-1 88-38 142-48v103H0z"></path>
+                                            <path class="green-wave-medium" d="M0 76c60-34 119 6 172 8 64 3 98-23 148-36v72H0z"></path>
+                                        </svg>
+                                    </article>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+            </section>
+            <!-- BULK GENERATOR PAGE -->
+            <section class="page-section" id="bulk-generator">
+
+                <div class="bulk-import-card">
+                    <header class="bulk-import-header">
+                        <div>
+                            <p class="dashboard-eyebrow">DATA OPERATIONS</p>
+                            <h2>Bulk employee import</h2>
+                            <p>Upload a CSV or Excel workbook to add employee records in one validated import.</p>
+                            <p class="bulk-job-reference">Current job reference <span id="bulkJobId"></span></p>
+                        </div>
+                    </header>
+
+                    <section class="bulk-files-section" aria-labelledby="bulkFilesHeading">
+                        <h3 id="bulkFilesHeading">Files</h3>
+                        <ul class="bulk-file-list" id="bulkFileList" aria-live="polite">
+                            <li class="bulk-files-empty" id="bulkFilesEmpty">
+                                No files selected.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <div
+                        class="bulk-drop-zone"
+                        id="bulkDropZone"
+                        role="region"
+                        aria-label="Employee file upload"
+                    >
+                        <span class="bulk-upload-icon" aria-hidden="true">↑</span>
+                        <p>Drag and drop CSV or Excel files here</p>
+                        <span class="bulk-drop-or">or</span>
+                        <button class="bulk-browse-button" id="bulkBrowseButton" type="button">
+                            Browse files
+                        </button>
+                        <input
+                            id="bulkFileInput"
+                            type="file"
+                            accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                            multiple
+                            hidden
+                        >
+                        <small>CSV or Excel (.xlsx) files, up to 5 MB each (10 files maximum).</small>
+                    </div>
+
+                    <p class="bulk-import-message" id="bulkImportMessage" role="status"></p>
+
+                    <footer class="bulk-import-actions">
+                        <button class="bulk-close-button" id="bulkCloseButton" type="button">
+                            Close
+                        </button>
+                        <button class="bulk-start-button" id="bulkStartButton" type="button">
+                            Start Import
+                        </button>
+                    </footer>
+
+    <section class="bulk-export-section bulk-template-section" aria-labelledby="bulkTemplateHeading">
+        <div>
+            <h3 id="bulkTemplateHeading">Employee Excel template</h3>
+            <p>Download the supported workbook template, complete the employee fields, then import it above.</p>
+        </div>
+        <div>
+            <button
+                class="bulk-start-button"
+                id="bulkTemplateButton"
+                type="button"
+            >
+                Download Excel template
+            </button>
+        </div>
+        <p
+            id="bulkTemplateMessage"
+            class="bulk-import-message"
+            role="status"
+            aria-live="polite"
+        ></p>
+    </section>
+
+                    <section class="bulk-export-section" aria-labelledby="bulkExportHeading">
+                        <div>
+                            <h3 id="bulkExportHeading">Export Employee Sheet</h3>
+                            <p>Download employee records saved in your database.</p>
+                        </div>
+                        <div class="bulk-export-controls">
+                            <label for="bulkExportFormat">Export Format</label>
+                            <select id="bulkExportFormat">
+                                <option value="csv">CSV (.csv)</option>
+                                <option value="xlsx">Excel (.xlsx)</option>
+                            </select>
+                            <button
+                                class="bulk-start-button"
+                                id="bulkExportButton"
+                                type="button"
+                            >
+                                Export All Employees
+                            </button>
+                        </div>
+                        <p
+                            class="bulk-import-message"
+                            id="bulkExportMessage"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+                    </section>
+                </div>
+
+            </section>
+
+            <!-- EMPLOYEE LIST PAGE -->
+            <section class="page-section" id="employees">
+
+                <div class="section-heading employee-list-heading">
+                    <div>
+                        <h2>Employee List</h2>
+                        <p>Search, review, edit, or remove saved employee records.</p>
+                    </div>
+                    <button class="primary-button" type="button" data-page="create-id">
+                        <span aria-hidden="true">+</span> Add Employee
+                    </button>
+                </div>
+
+                <div class="branding-card employee-list-card">
+                    <div class="employee-list-toolbar">
+                        <div class="employee-list-count" id="employeeListCount" aria-live="polite">
+                            Employee records
+                        </div>
+                        <div class="employee-list-filters">
+                        <label for="employeeSearch">Search employees</label>
+                        <input
+                            id="employeeSearch"
+                            type="search"
+                            placeholder="Name, ID, department, or email"
+                            autocomplete="off"
+                        >
+                        <label for="employeeStatusFilter">Status</label>
+                        <select id="employeeStatusFilter">
+                            <option value="">All statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                        </div>
+                    </div>
+                    <p id="employeeListMessage" role="status"></p>
+                    <div class="employee-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Employee</th>
+                                    <th scope="col">Employee ID</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="employeeListBody">
+                                <tr>
+                                    <td colspan="6">Loading employees...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+<!-- SETTINGS PAGE -->
+            <section class="page-section" id="settings">
+                <section class="settings-branding-view" id="branding" aria-labelledby="brandingHeading" hidden>
+
+                <div class="employee-container">
+                    <div class="branding-header page-section-heading">
+                        <p class="dashboard-eyebrow">BRAND IDENTITY</p>
+                        <h2 id="brandingHeading">Company branding</h2>
+                        <p>Manage the company name and logo used across employee ID cards.</p>
+                    </div>
+                    <button class="secondary-button settings-back-button" type="button" data-page="settings">
+                        <span aria-hidden="true">←</span> Back to Settings
+                    </button>
+
+                    <div class="employee-layout">
+                        <div class="employee-form">
+                            <form id="brandingForm">
+                                <div class="form-group">
+                                    <label for="companyNameInput">Company name <span aria-hidden="true">*</span></label>
+                                    <input
+                                        type="text"
+                                        id="companyNameInput"
+                                        name="companyName"
+                                        placeholder="Enter your company name"
+                                        maxlength="150"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="companyLogoInput">Company logo <span aria-hidden="true">*</span></label>
+                                    <input
+                                        type="file"
+                                        id="companyLogoInput"
+                                        name="companyLogo"
+                                        accept="image/png,image/jpeg,image/webp"
+                                        required
+                                    >
+                                    <small>
+                                        Upload a PNG, JPG, or WebP image. Maximum size: 2 MB.
+                                    </small>
+                                </div>
+
+                                <div class="logo-preview-box">
+                                    <p>Logo Preview</p>
+                                    <img
+                                        id="companyLogoPreview"
+                                        src=""
+                                        alt="Company logo preview"
+                                        hidden
+                                    >
+                                    <span id="logoPlaceholder">
+                                        Your logo will appear here
+                                    </span>
+                                </div>
+
+                                <button type="submit" class="save-branding-button">
+                                    Save Branding
+                                </button>
+                                <p id="brandingMessage" role="status"></p>
+                            </form>
+                        </div>
+
+                        <div class="employee-form saved-branding">
+
+                            <p class="dashboard-eyebrow">CURRENT BRAND</p>
+                            <h3>Saved company branding</h3>
+
+                            <img
+                                id="savedCompanyLogo"
+                                src=""
+                                alt="Saved company logo"
+                                hidden
+                            >
+
+                            <h2 id="savedCompanyName">No company saved yet</h2>
+
+                        </div>
+                    </div>
+                </div>
+
+                </section>
+                <div id="settingsOverview">
+                <div class="page-section-heading">
+                    <p class="dashboard-eyebrow">WORKSPACE</p>
+                    <h2>Settings</h2>
+                    <p>Review the configuration currently available in your ID card workspace.</p>
+                </div>
+                <section class="settings-summary-card" aria-labelledby="settingsBrandingHeading">
+                    <div class="settings-summary-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 20V7.5L12 4l8 3.5V20M8 20v-5h8v5M8 9h.01M12 9h.01M16 9h.01"/></svg>
+                    </div>
+                    <div class="settings-summary-copy">
+                        <p class="dashboard-eyebrow">AVAILABLE CONFIGURATION</p>
+                        <h3 id="settingsBrandingHeading">Company branding</h3>
+                        <p>Company name and logo are managed here and are used on Green Corporate employee cards.</p>
+                    </div>
+                    <button class="secondary-button" type="button" data-page="branding">
+                        Manage branding <span aria-hidden="true">→</span>
+                    </button>
+                </section>
+                <p class="settings-note">No additional application settings are configured. Existing employee and company data remain managed by their respective pages.</p>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <div
+        class="id-card-preview-overlay"
+        id="idCardPreviewOverlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="idCardPreviewTitle"
+        aria-describedby="idCardPreviewDescription"
+        tabindex="-1"
+        hidden
+    >
+        <section class="id-card-preview-panel">
+            <header class="id-card-preview-header">
+                <div>
+                    <p class="id-card-preview-eyebrow">GREEN CORPORATE</p>
+                    <h2 id="idCardPreviewTitle">ID Card Preview</h2>
+                    <p id="idCardPreviewDescription">
+                        Review both sides of your card. Drag or use the controls to rotate.
+                    </p>
+                </div>
+                <button
+                    class="id-card-preview-close"
+                    id="closeIdCardPreview"
+                    type="button"
+                    aria-label="Close ID card preview"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+
+            <div class="id-card-preview-stage-wrap">
+                <div
+                    class="id-card-preview-stage"
+                    id="idCardPreviewStage"
+                    tabindex="-1"
+                    role="img"
+                    aria-label="Interactive employee ID card preview"
+                >
+                    <div class="preview-card-rotator" id="previewCardRotator">
+                        <div class="preview-card-face preview-card-face-front"></div>
+                        <div class="preview-card-face preview-card-face-back"></div>
+                    </div>
+                    <div class="id-card-preview-sheen" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <div
+                class="id-card-preview-controls"
+                id="idCardPreviewControls"
+                hidden
+            >
+                <div class="id-card-preview-side-controls" aria-label="Card side">
+                    <button
+                        type="button"
+                        class="is-selected"
+                        data-preview-side="front"
+                        aria-pressed="true"
+                    >
+                        Front Side
+                    </button>
+                    <button
+                        type="button"
+                        data-preview-side="back"
+                        aria-pressed="false"
+                    >
+                        Back Side
+                    </button>
+                </div>
+                <div class="id-card-preview-actions">
+                    <button type="button" id="rotateIdCardPreview">
+                        Rotate 360°
+                    </button>
+                    <button type="button" id="resetIdCardPreview">
+                        Reset View
+                    </button>
+                    <button type="button" id="closeIdCardPreviewAction">
+                        Close Preview
+                    </button>
+                    <button
+                        type="button"
+                        class="preview-print-button"
+                        id="saveIdCardPreview"
+                    >
+                        Save ID Card
+                    </button>
+                    <button
+                        type="button"
+                        class="preview-print-button"
+                        id="printIdCardPreview"
+                    >
+                        Print ID Card
+                    </button>
+                </div>
+                <p
+                    class="id-card-save-status"
+                    id="idCardSaveStatus"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></p>
+                <p
+                    class="id-card-print-status"
+                    id="idCardPrintStatus"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/employee.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/bulk-generator.js"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^18.0.9",
+    "exceljs": "^4.4.0",
+    "express": "^5.3.0",
+    "lucide-react": "^1.62.0",
+    "multer": "^2.5.0",
+    "mysql2": "^3.22.4",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^25.16.0",
+    "qrcode": "^1.5.4"
+  },
+  "name": "id-card-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node database/server.js",
+    "dev": "vite --host 127.0.0.1",
+    "dev:server": "node database/server.js",
+    "test": "node --test database/id-card-pdf.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}
